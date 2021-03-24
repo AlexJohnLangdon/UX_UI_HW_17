@@ -1,75 +1,136 @@
 html {
     background-color: lightgrey;
+    margin-left: 80px;
+    margin-right: 80px;
   }
 body {
     margin: 0;
   }
 header {
-    padding: 15px;
+    padding-top: 30px;
     margin-bottom: 100px;
   }
 header ul {
     float: right;
     color: white;
-    margin-right: 85px;
   }
 header li {
     display: inline-block;
     padding: 0px 5px;
   }
-header img {
-    margin-left: 85px;
-  }
 .inline-block {
     color: black;
 }
+
 .cardContent {
     padding: 100px 15px;
   }
 .logo {
     height: 25px;
 }
-.heroText {
-    margin-left: 85px;
-    width: 450px;
-  }
 .heroText, h1 {
     color: royalblue;
 }
-.content {
-    max-width: 1010px;
-    height: 400px;
-    margin: 0 auto;
-    padding: 50px;
-    background-color: royalblue;
-  }
-.content p {
-    width: 400px;
-    color: white;
-  }
-.content h2 {
-    color: white;
+.heroBox {
+  background-image: url(../images/me.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: max-content;
+  padding: 50px;
+  margin-bottom: 50px;
+  
 }
-.contentImg {
-    display: inline-block;
-    justify-content: right;
+.flexContainer {
+  display: flex;
+  padding: 60px 30px;
 }
+.flexContainer div {
+  width: 33%;
+  padding: 25px;
+}
+
+.myWork {
+  padding: 60px 30px;
+  padding-top: 0;
+  background-color: lightgray;
+}
+.workGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 300px 300px 300px;
+  grid-template-areas:
+  "mockup1 content1"
+  "mockup2 content2"
+  "mockup3 content3"
+  ;
+}
+.workGrid img {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  display: block;
+}
+.mockup1 {
+  grid-area: mockup1;
+}
+.mockup2 {
+  grid-area: mockup2;
+}
+.mockup3 {
+  grid-area: mockup3;
+}
+.mockup1, .mockup2, .mockup3, .content1, .content2, .content3 {
+  padding: 50px;
+  background-color: royalblue;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content1 {
+  grid-area: content1;
+}
+.content2 {
+  grid-area: content2;
+}
+.content3 {
+  grid-area: content3;
+}
+
+
 footer {
     padding: 5px;
     color: white;
-    margin-left: 85px;
   }
 footer h2 {
     color: royalblue;
   }
+
 h1, h2, h3, li {
     font-family: cooper-black-std, serif;
     font-style: normal;
     font-weight: 400;
   }
 p {
-    font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
     font-weight: 300;
     font-style: normal;
     color: black;
+}
+
+@media only screen and (max-width: 600){
+  .workGrid {
+      flex-direction: column;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 0 auto;
+      grid-template-areas: 
+      "mockup1"
+      "content1"
+      "mockup2"
+      "content2"
+      "mockup3"
+      "content3"
+      ;
   }
+}
